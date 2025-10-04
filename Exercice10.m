@@ -11,14 +11,16 @@ a2 = 1;
 b1n = b1/sum(b1);
 b2n = b2/sum(b2);
 
-figure;
+[h1,w1] = freqz(b1,a1,1024);
+[h2,w2] = freqz(b2,a2,1024);
 
+figure;
 subplot(2,1,1);
-freqz(b1,a1,1024);
+zplane(h1,w1);
 title("5-point Moving Average");
 
 subplot(2,1,2);
-freqz(b2,a2,1024);
+zplane(h2,w2);
 title("9-point Moving Average");
 
 [z1,p1,k1] = tf2zpk(b1n, a1);
