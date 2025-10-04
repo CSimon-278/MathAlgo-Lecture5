@@ -26,7 +26,6 @@ title("9-point Moving Average");
 [z1,p1,k1] = tf2zpk(b1n, a1);
 [z2,p2,k2] = tf2zpk(b2n, a2);
 
-figure;
 subplot(2,2,2);
 zplane(z1,p1);
 title("Zeros/Poles: 5-point MA");
